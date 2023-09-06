@@ -1,0 +1,40 @@
+<%-include('../../partials/head.ejs')%>
+<div class="bg-image " style="background-image: url('1.jpg');
+height: 100vh">>
+    <div class="col-lg-5 mx-auto shadow px-5 card card-body'">
+       
+        <form class="row g-3" action="/views/pages/home.ejs" method="POST">
+                <!-- iCon by oNlineWebFonts.Com -->
+                <div class="col-md-12">
+                    <label for="inputCountry" class="form-label">CITY/HOTEL/RESORT/AREA</label>
+                    <input type="text" class="form-control" name="country" id="inputCountry">
+                </div>
+               
+                <div class="col-lg-6"> CHECK IN
+                <input type="date" class="form-control">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+               
+            </div>
+     
+            <div class="col-lg-6"> CHECK OUT
+                <input type="date" class="form-control">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+               
+            </div>
+    
+                <button type="submit" class="btn btn-primary col-lg-4" value="Submit">Search</button>
+            </div>
+        </form>
+    </div>
+ 
+    </div>
+ </div>
+   
+    <%-include('../../partials/footer.ejs')%>
+  </body>
+ 
+</html>

@@ -1,0 +1,86 @@
+<%-include('../../partials/head.ejs')%>
+    <!-- Button trigger modal -->
+
+    <div class="container" style="
+min-height: 100vh">
+
+        <div class="col-lg-8 mx-auto mb-5 shadow px-5 card card-body">
+            <img src="images/rc1.jpg" class="img-fluid rounded d-block m-auto max-width: 100%" alt="Responsive image">
+            <div class="row">
+                <div class="col-lg-3">
+
+                </div>
+                <div class="h2 col-lg-9">
+                    <h1>
+                        <%=company.cname%>
+                    </h1>
+                </div>
+                <div class="row p-3 mx-2">
+
+                    <div class="row">
+                        <div class="col-lg-6 mt-5">
+                            <div class="h3">Rating : <%=company.rating%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="h3">Total <%=company.type%> : <%=company.total%>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="/company/vehicles" class="btn btn-outline-primary justify-content-center" >View All</a>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <form class="row g-3 " action="/company?task=adv" method="POST">
+                                        <input type="text" class="form-control" name="adv" id="to1">
+                                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="h3"> Policy :</div>
+                        </div>
+                    </div>
+
+                    <span class="border border-dark p-3">
+                        <div class="row">
+                            <div class="col-lg-8 ">
+                                <div class="h3">Advance Booking: <%=company.advBook%> days</div>
+                            </div>
+                            <div class="col-lg-4 mx-auto">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Edit
+                                  </a>
+                                  <div class="collapse" id="collapseExample">
+                                    <div class="card card-body">
+                                        <form class="row g-3 " action="/company?task=adv" method="POST">
+                                            <input type="text" class="form-control" name="adv" id="to1">
+                                            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                                        </form>
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, tempore praesentium laudantium aliquam quibusdam odit commodi itaque cumque esse molestiae! Saepe nobis explicabo nihil modi aliquid quibusdam quidem hic delectus!<p></p></div>
+                    </div>
+                    </span>
+                   
+                    
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+   
+    <%-include('../../partials/footer.ejs')%>
+        </body>
+
+        </html>
+

@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg nav  py-4 ",>
+  <div class="container-fluid">
+
+<a class="navbar-brand " href="/">
+  <div> <img src="https://s3.amazonaws.com/logosnap/logos/2022/Aug/small-1575-62ed03e0d49fb.png" alt="..."></div>
+</a>
+
+    <div class=" d-flex justify-content-end ">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link login-btn mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+             Sign In
+          </a>
+        </li>
+        <!li class="nav-item">
+          <a class="nav-link login-btn mx-2" href="/auth/signup">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>$("#exampleModal").modal();</script>
+  
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 
+                    <form class="row g-3 mt-3" action="/auth/signin" method="POST">
+                      <div class="col-md-6">
+                        <label for="usernameoremail1" class="form-label">User Name/Email:</label>
+                        <input type="username" class="form-control" name="usernameoremail" id="usernameoremail1" placeholder="user/email">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="password2" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password2">
+                      </div>      
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary" value="Submit" >Sign In</button>
+                      </div>
+                    </form>
+                    <a class="btn btn-light mt-3" href="#" role="button">Forgotten your username or password?</a>
+                </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 
+                </div>
+              </div>
+            </div>
+          </div>

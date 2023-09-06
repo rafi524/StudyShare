@@ -1,0 +1,48 @@
+<% for(let i=0;i<results.length;i++) { %>
+          
+    <div class="col mx-10 p-3  background-color:#888888  text-success">
+      <div class="row"> 
+      <div class="h2 col-lg-3"><img src="images/train1.jpg" alt="MENU" width="125" height="75"></div>
+      <div class="h4 col-lg-3">Dep.Time</div>
+      <div class="h4 col-lg-3">Arr.Time</div>
+
+
+      <div class="dropdown col-lg-3">
+        <a class="btn btn-secondary dropdown-toggle bg-success " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Select Class
+        </a>
+      
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="service/train/seat/<%=results[i].id%>?Class=SHOVAN&&Coach=default&&date=<%=date%>">SHOVAN :<%=results[i].fare.SHOVAN%> BDT</a></li>
+          <li><a class="dropdown-item" href="service/train/seat/<%=results[i].id%>?Class=SNIGDHA&&Coach=default&&date=<%=date%>">SNIGDHA :<%=results[i].fare.SNIGDHA%> BDT</a></li>
+          <li><a class="dropdown-item" href="service/train/seat/<%=results[i].id%>?Class=AC_S&&Coach=default&&date=<%=date%>">AC_S :<%=results[i].fare.AC_S%> BDT</a></li>
+        </ul>
+      </div>
+      
+  </div>
+  <div class="row">
+  <div class="h4 col-lg-3"><div class="p"><%=results[i].trainName%></div></div>
+      <div class="h6 col-lg-3"><%=results[i].depTime%></div>
+      <div class="h6 col-lg-3"><%=results[i].arrTime%></div>
+  
+      </div>  
+      
+      <div class="row">
+        <div class="h6 col-lg-12">Starting point : <%=results[i].from%></div> 
+        <div class="h6">Ending point : <%=results[i].to%></div>
+      </div> 
+      <div class="row">
+          <div class="p col-lg-10"></div>
+          <div class="button col-lg-2">
+            <a href="service/train/seat/<%=results[i].id%>?Class=SHOVAN&&Coach=default&&date=<%=date%>" class="btn btn-outline-success justify-content-center">View Seats</a>
+          </div>
+      </div>
+  </div>
+      <div class="row bg-light">
+          <hr>
+      </div>
+  
+  
+  <% }
+  
+  %>

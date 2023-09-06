@@ -1,0 +1,124 @@
+<%-include('../partials/head.ejs')%>
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+
+
+
+
+
+<section class="header">
+  <style>
+      body {
+        background-image: url('images/2.jpg');
+      }
+      </style>
+ 
+  <h1> Travel across the globe</h1>
+  <p> Get the best offers</p>
+  
+</section>
+
+<div class="container" style="
+min-height: 75vh">
+
+<p>
+  
+  <button class="btn btn-book" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Book Now
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="col-lg-5 mx-auto bg-body px-5 card card-body">
+       
+       
+       
+    <form class="row g-3 " action="/service" method="POST">
+           
+            <div class="form-check col-lg-3 mt-5  ">
+                <input class="form-check-input " type="radio" name="Option" id="Bus1" value="Bus" checked>
+                <label class="form-check-label" for="Bus1">
+                  Bus
+                </label>
+              </div>
+              <div class="form-check col-lg-3 mt-5">
+                <input class="form-check-input" type="radio" name="Option" id="Train1" value="Train">
+                <label class="form-check-label" for="Train1">
+                  Train
+                </label>
+              </div>
+              <div class="form-check col-lg-3 mt-5 ">
+                <!-- <input class="form-check-input" type="radio" name="Option" id="Plane1" value="Plane" >
+                <label class="form-check-label" for="Plane1">
+                  Plane
+                </label> -->
+              </div>
+              <div class="form-check col-lg-3 mt-5 ">
+                <!--a class="nav-link mx-1" href="/?hotel=1">Hotel</a--!>
+              </div>
+              <%if(!hotel){%> 
+                <%-include('../partials/vehicleSearchForm.ejs')%>
+                <%}
+                else{%><%-include('../partials/footer.ejs')%><%}%>
+       
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" value="Submit">Search</button>
+        </div>
+    </form>
+</div>
+
+</div>
+</div>
+
+
+    <!-- <div class="col-lg-5 mx-auto bg-body px-5 card card-body">
+       
+       
+       
+        <form class="row g-3 " action="/service" method="POST">
+               
+                <div class="form-check col-lg-3 mt-5  ">
+                    <input class="form-check-input " type="radio" name="Option" id="Bus1" value="Bus" checked>
+                    <label class="form-check-label" for="Bus1">
+                      Bus
+                    </label>
+                  </div>
+                  <div class="form-check col-lg-3 mt-5">
+                    <input class="form-check-input" type="radio" name="Option" id="Train1" value="Train">
+                    <label class="form-check-label" for="Train1">
+                      Train
+                    </label>
+                  </div>
+                  <div class="form-check col-lg-3 mt-5 ">
+                    <input class="form-check-input" type="radio" name="Option" id="Plane1" value="Plane" >
+                    <label class="form-check-label" for="Plane1">
+                      Plane
+                    </label>
+                  </div>
+                  <div class="form-check col-lg-3 mt-5 ">
+                    <a class="nav-link mx-1" href="/?hotel=1">Hotel</a>
+                  </div>
+                  <%if(!hotel){%> 
+                    <%-include('../partials/vehicleSearchForm.ejs')%>
+                    <%}
+                    else{%><%-include('../partials/footer.ejs')%><%}%>
+           
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" value="Submit">Search</button>
+            </div>
+        </form>
+    </div>
+ 
+    </div> -->
+ </div>
+
+
+
+
+
+
+
+
+    <%-include('../partials/footer.ejs')%>
+  </body>
+
+</html>

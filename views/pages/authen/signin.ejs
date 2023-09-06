@@ -1,0 +1,34 @@
+<%-include('../../partials/head.ejs')%>
+<div class="container" style="
+min-height: 100vh ">
+<div class="col-lg mt-2">
+    <div class="col-lg-5 mx-auto shadow px-5 py-3 card card-body mt-3'">
+      <% if(errors.length>0){ %>
+        <div class=" mt-2"></div> 
+        <div class="alert alert-danger" role="alert">
+          <%=errors[0]%>
+        </div>
+    <% }%>
+        <form class="row g-3 mt-3" action="/auth/signin" method="POST">
+          <div class="col-md-6">
+            <label for="usernameoremail1" class="form-label">User Name/Email:</label>
+            <input type="username" class="form-control" name="usernameoremail" id="usernameoremail1" placeholder="user/email">
+          </div>
+          <div class="col-md-6">
+            <label for="password2" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password2">
+          </div>      
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" value="Submit" >Sign In</button>
+          </div>
+        </form>
+        <a class="btn btn-light mt-3" href="#" role="button">Forgotten your username or password?</a>
+      </div>
+      
+      
+          
+      </div>
+</div>
+<%-include('../../partials/footer.ejs')%>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<div class="col-lg-5 mx-auto shadow px-5 card card-body bg-light ">
+    <div class="h3"><h3><%=payNow.name%></h3></div>
+    <div class="h4"><h4>Total Seat    : <%=payNow.totalSeat%></h4></div>
+    <div class="h4"><h4>Total Fare    : <%=payNow.totalFare%> BDT</h4></div>
+    <div class="h4"><h4>Your Wallet    : <%=payNow.wallet%> BDT</h4></div>
+    <div class="h4"><h4>Payable total    : <%=payNow.totalFare-payNow.wallet%> BDT</h4></div>
+
+    <button type="button" class="btn btn-primary col-lg-3 mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Pay Now
+      </button>
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Payment Gateway</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-3">
+            <form class="row g-3 mt-3" action="/service/transaction/<%=payNow.rid%>?jDate=<%=payNow.jDate%>" method="POST">
+                <div class="col-md-4">
+                    <label for=method class="form-label">Payment Method</label>
+                    <select name="method" id="method">
+                        <option value="bKash">bKash</option>
+                        <option value="Nagad">Nagad</option>
+                        <option value="UPay">UPay</option>
+                        <option value="Sonali Bank">Sonali Bank</option>   
+                      </select>
+                </div>
+                <div class="col-md-4">
+                  <label for=trxID class="form-label">Transaction ID</label>
+                  <input type="text" class="form-control" name="trxID" id="trxID">
+                </div> 
+                <div class="col-md-4">
+                    <label for=amount class="form-label">Amount</label>
+                    <input type="text" class="form-control" name="amount" id="trxID">
+                  </div> 
+                  <div class="col-lg-9"></div>    
+                <div class="col-lg-3">
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="Submit" >Submit</button>
+                </div>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

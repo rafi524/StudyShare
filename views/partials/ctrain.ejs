@@ -1,0 +1,41 @@
+<% for(let i=0;i<results.length;i++) { %>
+          
+    <div class="col mx-10 p-3  background-color:#888888  text-success">
+      <div class="row"> 
+      <div class="h2 col-lg-3"><img src="images/train1.jpg" alt="Train" width="125" height="75"></div>
+      <div class="h4 col-lg-3">Dep.Time</div>
+      <div class="h4 col-lg-3">Arr.Time</div>
+
+
+      <div class="dropdown col-lg-3">
+        Status: <%=results[i].Status%>
+        <a class="btn btn-warning bg-success " href="vehicles/<%=results[i].Train_ID%>?status=unavailable" >
+          Make Unavailable
+        </a>     
+  </div>
+  <div class="row">
+  <div class="h4 col-lg-3"><div class="p"><%=results[i].trainName%></div></div>
+      <div class="h6 col-lg-3"><%=results[i].Departure_Time%></div>
+      <div class="h6 col-lg-3"><%=results[i].Arrival_Time%></div>
+  
+      </div>  
+      
+      <div class="row">
+        <div class="h6 col-lg-12">Starting point : <%=results[i].from%></div> 
+        <div class="h6">Ending point : <%=results[i].to%></div>
+      </div> 
+      <div class="row">
+          <div class="p col-lg-10"></div>
+          <div class="button col-lg-2">
+            <a href="#" class="btn btn-outline-success justify-content-center">View Seats</a>
+          </div>
+      </div>
+  </div>
+      <div class="row bg-light">
+          <hr>
+      </div>
+  
+  
+  <% }
+  
+  %>

@@ -1,0 +1,51 @@
+<% function addDays(date, days) { var result=new Date(date); result.setDate(result.getDate() + days); return result; }
+  let next=addDays(new Date(date),1); next=next.toISOString().substring(0,10); let prev=addDays(new Date(date),-1);
+  prev=prev.toISOString().substring(0,10) %>
+
+  <div class="row bg-transparent">
+    <div class="btn-group  col-lg-6" role="group" aria-label="Basic example">
+      <div class="row p-3">
+
+        <div class="card-body justify-content-center">
+
+          <a type="button" class="btn btn-outline-success justify-content-center" href="?Class=<%=coaches.sClass%>&&Coach=<%=coaches.sCoach%>&&date=<%=prev%>">Prev Day</a>
+          <a type="button" class="btn btn-outline-success justify-content-end" href="?Class=<%=coaches.sClass%>&&Coach=<%=coaches.sCoach%>&&date=<%=next%>">Next Day</a>
+        </div>
+      </div>
+    </div>
+    <div class=" btn-group col-lg-6"  role="group" aria-label="Basic example">
+      <div class="row p-3">
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle bg-transparent text-primary " href="#" role="button"
+            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=coaches.sClass%>
+          </a>
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="?Class=SHOVAN&&Coach=default&&date=<%=date%>">SHOVAN : BDT</a></li>
+            <li><a class="dropdown-item" href="?Class=SNIGDHA&&Coach=default&&date=<%=date%>">SNIGDHA BDT</a></li>
+            <li><a class="dropdown-item" href="?Class=AC_S&&Coach=default&&date=<%=date%>">AC_S :BDT</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="btn btn-small-secondary dropdown-toggle bg-transparent text-primary " href="#" role="button"
+            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            Coach: <%=coaches.sCoach%>
+          </a>
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+            <% let carray=[-5,-6]; if(coaches.sClass=='SHOVAN' ) carray=coaches.SHOVAN; else if(coaches.sClass=='SNIGDHA'
+              ) carray=coaches.SNIGDHA; else carray=coaches.AC_S; for(let i=0;i<carray.length;i++) { %>
+              <li><a class="dropdown-item" href="?Class=<%=coaches.sClass%>&&Coach=<%-carray[i]%>&&date=<%=date%>">
+                  <%-carray[i]%>
+                    </carry>
+                </a></li>
+              <%} %>
+  
+          </ul>
+        </div>
+      </div>
+     
+
+
+     
+    </div>
+  </div>

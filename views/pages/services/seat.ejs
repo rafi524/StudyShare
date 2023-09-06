@@ -1,0 +1,135 @@
+<%-include('../../partials/head.ejs')%>
+  <div class="container" style="
+min-height: 75vh ">
+
+<%
+if(coaches!=null)
+{%>
+  <%-include('../../partials/trainSeatOption.ejs')%>
+  <%}
+
+%>
+
+    <div class="col my-3 "></div>
+    <%
+    if(message){%>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>
+          <%= message %>
+        </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <%} 
+    %>
+    <% if (payNow) { %>
+
+      <%-include('../../partials/paynow.ejs')%>
+      
+        <% } else{%>
+          <%
+          function addDays(date, days) {
+            var result = new Date(date);
+            result.setDate(result.getDate() + days);
+            return result;
+          }
+        let next=addDays(new Date(date),1);
+          next=next.toISOString().substring(0,10);
+          let prev=addDays(new Date(date),-1);
+          prev=prev.toISOString().substring(0,10)
+          if(bType.tName=='Bus')
+              {%>
+                <div class="btn-group  col-lg mt-10 mx-15 p-3" role="group" aria-label="Basic example">
+                  <div class="row p-3">
+                    
+                    <div class="card-body justify-content-center">
+                      
+                      <a type="button" class="btn btn-outline-success justify-content-center" href="?date=<%=prev%>">Prev Day</a>
+                      <a type="button" class="btn btn-outline-success justify-content-end" href="?date=<%=next%>">Next Day</a>
+                    </div>
+                  </div>
+                  
+                
+                  
+                </div>
+                <%}
+          %>
+              
+         
+            <div class="col-lg mt-10 mx-15">
+
+
+              <div class="col-lg-3 mx-auto shadow px-10 card card-body mt-7">
+                
+                <h2 class="h2"></h2>
+                <form class="row g-3 mt-5 p-7 " action="/service/<%=bType.tName%>/seat/<%=ttID%>?Class=<%=bType.Class%>&&Coach=<%=bType.Coach%>&&date=<%=date%>" method="post">
+                  <% let len=seats.length; for(let i=0;i<len;i++) { %>
+                    <div class="row">
+                      <div class="checkbox col-2 ">
+
+                        <input type="checkbox" name="<%=seats[i].Seat_ID%>" <%if(seats[i].AVAILABLE==0){%>disabled<%}%>
+                          >
+                          <span class="checkbox-icon-wrapper bg-dark ">
+                            <span class="checkbox-icon glyphicon glyphicon-ok"></span>
+                          </span>
+
+                      </div>
+                      <%i++%>
+                        <div class="checkbox col-2 ">
+
+                          <input type="checkbox" name="<%=seats[i].Seat_ID%>" <%if(seats[i].AVAILABLE==0){%>disabled
+                          <%}%>>
+                            <span class="checkbox-icon-wrapper bg-dark ">
+                              <span class="checkbox-icon glyphicon glyphicon-ok"></span>
+                            </span>
+
+                        </div>
+                        <%i++%>
+                          <div class="col-lg-4"></div>
+                          <div class="checkbox col-2 ">
+
+                            <input type="checkbox" name="<%=seats[i].Seat_ID%>" <%if(seats[i].AVAILABLE==0){%>disabled
+                            <%}%>>
+                              <span class="checkbox-icon-wrapper bg-dark ">
+                                <span class="checkbox-icon glyphicon glyphicon-ok"></span>
+                              </span>
+
+                          </div>
+
+                          <%i++%>
+                            <div class="checkbox col-2 ">
+
+                              <input type="checkbox" name="<%=seats[i].Seat_ID%>" <%if(seats[i].AVAILABLE==0){%>disabled
+                              <%}%>>
+                                <span class="checkbox-icon-wrapper bg-dark ">
+                                  <span class="checkbox-icon glyphicon glyphicon-ok"></span>
+                                </span>
+
+                            </div>
+                    </div>
+
+
+
+                    <% } %>
+                      <div class="col-lg-6 mx-3"></div>
+                      <div class="col">
+                        <button type="submit" class="btn btn-outline-success justify-content-center" value="Submit">Book Now</button>
+                      </div>
+                </form>
+              </div>
+
+
+
+            </div>
+            <%} %>
+
+
+
+  
+
+  <div class="col my-3 "></div>
+</div>
+  <%-include('../../partials/footer.ejs')%>
+
+    </body>
+
+    </html>

@@ -1,0 +1,35 @@
+<% for(let i=0;i<results.length;i++) { %>
+          
+    <div class="col mx-10 p-3  shadow text-success">
+      <div class="row"> 
+      <div class="h2 col-lg-3"><%=results[i].cname%></div>
+      <div class="h4 col-lg-3">Dep.Time</div>
+      <div class="h4 col-lg-3">Arr.Time</div>
+      <div class="h2 col-lg-3">Fare :<%=results[i].fare%></div>
+  </div>
+  <div class="row">
+  <div class="h4 col-lg-3"><%=results[i].name%></div>
+      <div class="h6 col-lg-3"><%=results[i].depTime%></div>
+      <div class="h6 col-lg-3"><%=results[i].arrTime%></div>
+  
+      </div>  
+      
+      <div class="row">
+        <div class="h6 col-lg-12">Starting point : <%=results[i].from%></div> 
+        <div class="h6">Ending point : <%=results[i].to%></div>
+      </div> 
+      <div class="row">
+          <div class="p col-lg-10"></div>
+          <div class="button col-lg-2">
+            <a href="service/bus/seat/<%=results[i].id%>?date=<%=date%>" class="btn btn-outline-success justify-content-center">View Seats</a>
+          </div>
+      </div>
+  </div>
+      <div class="row bg-light">
+          <hr>
+      </div>
+  
+  
+  <% }
+  
+  %>

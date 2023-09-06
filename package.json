@@ -1,0 +1,37 @@
+{
+  "name": "proprac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.33.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.2.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsdom": "^20.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "oracledb": "^5.4.0",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": "16.16.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "nodemon": "^2.0.19"
+  }
+}

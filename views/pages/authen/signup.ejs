@@ -1,0 +1,82 @@
+<%-include('../../partials/head.ejs')%>
+<div class="container" style="
+min-height: 100vh ">
+<div class="col-lg mb-5 p-3" >
+   
+  <div class="col-lg-5 mx-auto shadow px-5 card card-body'">
+   
+    <h2 class="h2">Please give your information</h2>
+    <% if(errors.length>0){ %>
+      <div class=" mt-2"></div> 
+      <div class="alert alert-danger" role="alert">
+        <%=errors[0]%>
+      </div>
+  <% }%>
+    <form class="row g-3" action="/auth/signup" method="POST">
+      <div class="col-md-6">
+        <label for="inputUsername1" class="form-label">User Name:</label>
+        <input type="username" class="form-control " name="username" id="inputUsername1" placeholder="user Name should be unique">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control " name="email" id="inputEmail1">
+       
+      </div>
+      <div class="col-md-6">
+        <label for="inputpassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="inputpassword1">
+      </div>
+      <div class="col-md-6">
+        <label for="inputcpassword1" class="form-label">Confirm password</label>
+        <input type="password" class="form-control" name="cpassword" id="inputcpassword1">
+      </div>
+      <div class="col-md-6">
+        <label for="inputName1" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="inputNaame1">
+      </div>
+      <div class="col-md-6">
+          <label for="inputPhone1" class="form-label">Phone</label>
+          <input type="text" class="form-control" name="phone" id="inputPhone1">
+        </div>
+        <div class="col-md-6">
+          <label for="nid1" class="form-label">NID</label>
+          <input type="text" class="form-control" name="nid" id="nid1">
+        </div>
+        <div class="col-md-6">
+          <label for="passport1" class="form-label">Passport</label>
+          <input type="text" class="form-control" name="passport" id="passport1">
+        </div>
+        
+      
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" name="detail" id="inputAddress" placeholder="1234 Main St">
+      </div>
+      
+      <div class="col-md-4">
+          <label for="inputCountry" class="form-label">Country</label>
+          <input type="text" class="form-control" name="country" id="inputCountry">
+        </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" id="inputCity">
+      </div>
+      
+      <div class="col-md-6 py-3">
+        <label for="birthday p">Birthday:</label>
+      </br>
+        <input type="date" id="birthday" name="birthday">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary mb-3" value="Submit" >Sign Up</button>
+      </div>
+    </form>
+  </div>
+  
+  
+      
+  </div>
+</div>
+<%-include('../../partials/footer.ejs')%>
+</body>
+</html>

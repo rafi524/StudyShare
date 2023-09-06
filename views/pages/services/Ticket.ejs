@@ -1,0 +1,33 @@
+<%-include('../../partials/head.ejs')%>
+    <!-- Button trigger modal -->
+
+    <div class="container" style="
+min-height: 100vh">
+
+        <div class="col-lg-8 mx-auto mb-5 shadow px-5 card card-body">
+           
+      
+           
+
+
+            <h1 style="text-align:center">Thanks for choosing us</h1>
+            <div class="index">
+                <h1><b>Congratulations</b></h1>
+                <h2><u>Your ticket is below</u></h2>
+                <h2>Name: <%=ticket.custname%></h2>
+                <h2>Total Seat: <%=ticket.totaSeat%></h2>
+                <h2>Total Fare: <%=ticket.totalFare%></h2>
+                
+                <h2>Wallet balance: <%=ticket.wallet%> tk</h2>
+            </div>
+
+
+
+        </div>
+    </div>
+   
+    <%-include('../../partials/footer.ejs')%>
+        </body>
+
+        </html>
+
