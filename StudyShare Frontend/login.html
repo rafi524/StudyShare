@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+		<title>Login</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="login.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+	</head>
+
+	<body>
+		<section>
+			<div class="container">
+				<div class="loginbox mx-auto">
+					<h1 class="text-center text-capitalize pt-1">StudyShare</h1>
+					<hr class="border-white w-75 mx-auto pt-2">
+					<form method="POST" action="sidebar.html">	
+						<div class="form-group">
+							<label for="ID">Student ID</label>
+							<input type="text" class="form-control" placeholder="Enter your ID" id="ID">
+							<div id="error"></div>
+						</div>
+
+						<div class="form-group">
+							<label for="pass">Password</label>
+							<input type="password" style="-webkit-text-security: circle" class="form-control" placeholder="Enter your password" id="pass">
+							<div id="errorpass"></div>
+						</div>
+						<a href="#"><div class="small mx-auto">Forgot password?</div></a>
+						<div class="form-group form-check pt-4">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox"> Remember me
+							</label>
+						</div>
+						<button type="submit" id="btn" class="btn btn-primary">Login</button>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!--<div class="mt-5"></div>-->
+
+		<!-- Form validation -->
+		<script>
+			$(document).ready(function(){
+				$('#btn').click(function(){
+					var useremail = $('#email').val();
+					var userpass = $('#pass').val();
+
+					if(useremail == ""){
+						$('#error').html('***Student ID must be filled.');
+						$('#error').css('color', 'red');
+						return false;
+					}
+					if(userpass.length < 8){
+						$('#errorpass').html('***Wrong Password!');
+						$('#errorpass').css('color', 'red');
+						return false;
+					}
+				});
+			});
+		</script>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</body>
+</html>
