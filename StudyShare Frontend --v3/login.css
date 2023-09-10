@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url(images/login3.jpg) no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.container{
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.container .loginbox{
+	width: 35%;
+	color: white;
+	padding: 30px;
+	background: rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 0px 5px 3px black;
+	border-radius: 20px;
+}
+.container .loginbox input{
+	color: white;
+	background: rgba(0, 0, 0, 0.5);
+}
+.navbar{
+	color: white;
+	background: rgba(0, 0, 0, 0.7);
+}
+.container .loginbox form button{
+	border-radius: 0;
+	border: 1px solid white;
+	color: white;
+	background-color: transparent;
+	padding-left: 25%;
+	padding-right: 25%;
+	display: block;
+	margin: auto;
+}
+.container .loginbox form button:hover{
+	border-radius: 0;
+	border: 1px solid white;
+	color: black;
+	background-color: white;
+}
