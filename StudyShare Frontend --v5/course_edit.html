@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Course</title>
+    <link rel="stylesheet" type="text/css" href="course_add.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- material icons cdn -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- common css -->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="course.css"> 
+</head>
+<body style="background-color: #28a745;">
+    <div id="main-wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a class="d-flex align-items-center"> StudyShare </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Courses</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">Forums</a>
+                </li>
+                <li>
+                    <a href="#">Reviews</a>
+                </li>
+                <li>
+                    <a href="#">People</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div id="main-content">
+            <!-- navbar start -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- sidebar collapse button ## mobile view -->
+                <ul class="navbar-nav  d-flex align-items-center ">
+                    <li class="nav-item active mobile-view">
+                        <a class="nav-link d-flex align-items-center" href="#menu-toggle" id="menu-toggle">
+                            <i class="material-icons">menu</i>
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end sidebar collapse button ## mobile view -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                
+                <ul> </ul> <ul> </ul> <ul> </ul> <ul> </ul> <ul> </ul> <ul> </ul> 
+                
+                
+                <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
+                    <div class="row">
+                        <input class="flipkart-navbar-input col-xs-11" type="" placeholder="    Search" name="">
+                        <button class="flipkart-navbar-button col-xs-1">
+                            <svg width="15px" height="15px">
+                                <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+
+                
+
+                <div class="upper-links">
+                    <a class="links" href="">
+                        <svg class="" width="16px" height="12px" style="overflow: visible;">
+                            <path d="M8.037 17.546c1.487 0 2.417-.93 2.417-2.417H5.62c0 1.486.93 2.415 2.417 2.415m5.315-6.463v-2.97h-.005c-.044-3.266-1.67-5.46-4.337-5.98v-.81C9.01.622 8.436.05 7.735.05 7.033.05 6.46.624 6.46 1.325v.808c-2.667.52-4.294 2.716-4.338 5.98h-.005v2.972l-1.843 1.42v1.376h14.92v-1.375l-1.842-1.42z" fill="#fff"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav d-flex flex-row me-1">
+                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" data-abc="true" aria-expanded="false">Bijoy</a>
+                                <div class="dropdown-menu"> <a class="dropdown-item" href="" data-abc="true">Profile</a> <a class="dropdown-item" href="" data-abc="true">Settings</a> <a class="dropdown-item" href="" data-abc="true">Logout</a> </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <ul></ul>
+           
+            <form action="/courses/edit" method="post">
+                 <!-- <label>Course:</label> -->
+                 <input type="text" id="searchInput" placeholder="COURSE ID"
+                 onkeyup="searchOptions()">
+                 <input type="text" id="searchInput" placeholder="COURSE TITLE"
+                 onkeyup="searchOptions()">
+                 <input type="text" id="searchInput" placeholder="LEVEL"
+                 onkeyup="searchOptions()">
+                 <input type="text" id="searchInput" placeholder="TERM"
+                 onkeyup="searchOptions()">
+
+                <div class="edit-or-delete">
+                    <input type="submit" value="Save">
+                    <a href='/courses/delete' class="warning">
+                        Delete Course
+                    </a>
+                </div>
+            </form>
+
+            <script src="../../javascript/student/courses/add.js"></script>
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <!-- Menu Toggle Script -->
+            <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#main-wrapper").toggleClass("toggled");
+            });
+            </script>
+    </div>
+</body>
+</html>
